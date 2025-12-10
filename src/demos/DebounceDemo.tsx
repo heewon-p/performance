@@ -398,35 +398,6 @@ const SummaryTitle = styled.h3`
   margin-bottom: 20px;
 `;
 
-const ImprovementGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  margin-bottom: 20px;
-`;
-
-const ImprovementItem = styled.div`
-  text-align: center;
-`;
-
-const ImprovementLabel = styled.div`
-  font-size: 0.9rem;
-  opacity: 0.9;
-  margin-bottom: 5px;
-`;
-
-const ImprovementValue = styled.div`
-  font-size: 2rem;
-  font-weight: bold;
-`;
-
-const SummaryText = styled.p`
-  font-size: 1.1rem;
-  line-height: 1.8;
-  opacity: 0.95;
-  margin-top: 15px;
-`;
-
 const VideoWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -471,12 +442,6 @@ const MeasurementBox = styled.div`
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 20px;
-`;
-
-const MeasurementTitle = styled.h4`
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  color: #f0f0f0;
 `;
 
 const MeasurementGrid = styled.div`

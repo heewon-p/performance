@@ -3,7 +3,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import styled from "styled-components";
 import CachingDemo from "./demos/CachingDemo";
 import OptimisticUIDemo from "./demos/OptimisticUIDemo";
-import PrefetchingDemo from "./demos/PrefetchingDemo";
 import DebounceDemo from "./demos/DebounceDemo";
 import ComparisonTable from "./components/ComparisonTable";
 import InfiniteScrollDemo from "./demos/InfiniteScrollDemo.tsx";

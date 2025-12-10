@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import styled from "styled-components";
-import { mockWorkflows, Workflow } from "../mockData/workflows";
+import { mockWorkflows } from "../mockData/workflows";
 import MetricsCard from "../components/MetricsCard";
 
 const PrefetchingDemo = () => {
