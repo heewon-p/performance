@@ -68,7 +68,40 @@ const OptimisticUIDemo = () => {
 
   return (
     <DemoContainer>
-      <DemoTitle>⚡ Optimistic UI 비교</DemoTitle>
+      {/* 낙관적 업데이트 개념 설명 섹션 추가 */}
+      <ConceptCard>
+        <ConceptTitle>낙관적 업데이트(Optimistic Update)란?</ConceptTitle>
+        <ConceptDescription>
+          서버 응답을 기다리지 않고 사용자 행동이 성공할 것이라 가정하여 즉시
+          UI를 업데이트하는 기법
+        </ConceptDescription>
+        <ConceptList>
+          <ConceptItem>
+            <ConceptLabel>일반적인 방식</ConceptLabel>
+            <ConceptText>
+              사용자 액션 {"→"} 서버 응답 대기 {"→"} UI 업데이트 (응답 시간만큼
+              지연)
+            </ConceptText>
+          </ConceptItem>
+          <ConceptItem>
+            <ConceptLabel>낙관적 업데이트</ConceptLabel>
+            <ConceptText>
+              사용자 액션 {"→"} 즉시 UI 업데이트 {"→"} 백그라운드 서버 처리
+              (실패 시 롤백)
+            </ConceptText>
+          </ConceptItem>
+        </ConceptList>
+        <BenefitBox>
+          <BenefitTitle>개선 효과</BenefitTitle>
+          <BenefitText>
+            • 체감 응답 속도: 즉각적인 피드백으로 앱이 빠르게 느껴짐
+            <br />
+            • 사용자 경험: 기다림 없이 자연스러운 인터랙션
+            <br />• 신뢰성: 실패 시 자동 롤백으로 데이터 일관성 유지
+          </BenefitText>
+        </BenefitBox>
+      </ConceptCard>
+      <DemoTitle>낙관적 업데이트 비교</DemoTitle>
       <DemoDescription>
         체크박스를 클릭해보세요! 최적화 전은 800ms를 기다려야 하지만, 최적화
         후는 즉시 반영됩니다.
@@ -153,14 +186,14 @@ const OptimisticUIDemo = () => {
         </DemoBox>
       </ComparisonGrid>
 
-      <SummaryCard>
+      {/* <SummaryCard>
         <SummaryTitle>📊 사용자 경험 개선</SummaryTitle>
         <SummaryText>
           Optimistic UI 패턴을 사용하면 사용자는 즉각적인 피드백을 받아 앱이
           훨씬 빠르게 느껴집니다. 실제 API 응답 시간은 동일하지만, 체감 속도는
           800ms → 0ms로 개선됩니다!
         </SummaryText>
-      </SummaryCard>
+      </SummaryCard> */}
     </DemoContainer>
   );
 };
@@ -298,6 +331,80 @@ const SummaryText = styled.p`
   font-size: 1.1rem;
   line-height: 1.8;
   opacity: 0.95;
+`;
+
+// 새로운 스타일 컴포넌트 추가
+const ConceptCard = styled.div`
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 30px;
+  color: #1e40af;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+  border: 1px solid #bfdbfe;
+`;
+
+const ConceptTitle = styled.h3`
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  font-weight: 600;
+  color: #1e3a8a;
+`;
+
+const ConceptDescription = styled.p`
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  color: #1e40af;
+`;
+
+const ConceptList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+`;
+
+const ConceptItem = styled.div`
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+`;
+
+const ConceptLabel = styled.div`
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #2563eb;
+`;
+
+const ConceptText = styled.div`
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #475569;
+`;
+
+const BenefitBox = styled.div`
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  border: 2px solid #93c5fd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+`;
+
+const BenefitTitle = styled.h4`
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #1e3a8a;
+`;
+
+const BenefitText = styled.p`
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #475569;
 `;
 
 export default OptimisticUIDemo;

@@ -58,13 +58,12 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <Container>
         <Header>
-          <Title>API 최적화 성과 데모</Title>
+          <Title>API 최적화 Performance Demo</Title>
           <Subtitle>
-            프론트엔드 개발자의 API 통신 최적화 기법을 직접 체험해보세요!
+            AIDO 프로젝트에 적용한 API 최적화 기법을 확인할 수 있는 데모
+            웹사이트 입니다.
+            <br />
           </Subtitle>
-          <Author>
-            Built with React + TypeScript + React Query + Recharts
-          </Author>
         </Header>
 
         <DemoSelector>

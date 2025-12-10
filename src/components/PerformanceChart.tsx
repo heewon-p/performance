@@ -88,7 +88,7 @@ const PerformanceChart = ({
             <Tooltip />
             <Legend />
             <Bar dataKey="평균 응답시간 (ms)" fill="#ff6b6b" />
-            <Bar dataKey="캐시 히트" fill="#51cf66" />
+            <Bar dataKey="캐시 히트" fill="#6aca7a" />
           </BarChart>
         )}
       </ResponsiveContainer>
@@ -120,7 +120,7 @@ const ImprovementBadge = styled.div`
   text-align: center;
   margin-top: 20px;
   padding: 15px;
-  background: linear-gradient(135deg, #51cf66 0%, #37b24d 100%);
+  background: linear-gradient(135deg, #61c872 0%, #688a6e 100%);
   border-radius: 10px;
   color: white;
   font-size: 1.2rem;

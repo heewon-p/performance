@@ -51,6 +51,38 @@ const DebounceDemo = () => {
 
   return (
     <DemoContainer>
+      {/* 디바운싱 개념 설명 섹션 추가 */}
+      <ConceptCard>
+        <ConceptTitle>디바운싱(Debouncing)이란?</ConceptTitle>
+        <ConceptDescription>
+          연속된 이벤트를 그룹화하여 마지막 이벤트만 처리하는 성능 최적화 기법
+        </ConceptDescription>
+        <ConceptList>
+          <ConceptItem>
+            <ConceptLabel>디바운싱 미적용</ConceptLabel>
+            <ConceptText>
+              모든 입력 이벤트마다 즉시 처리 {"→"} 과도한 연산 및 API 호출 {"→"}{" "}
+              서버 부하 증가
+            </ConceptText>
+          </ConceptItem>
+          <ConceptItem>
+            <ConceptLabel>디바운싱 적용</ConceptLabel>
+            <ConceptText>
+              일정 시간 대기 {"→"} 추가 입력 없으면 처리 {"→"} 불필요한 호출
+              제거
+            </ConceptText>
+          </ConceptItem>
+        </ConceptList>
+        <BenefitBox>
+          <BenefitTitle>개선 효과</BenefitTitle>
+          <BenefitText>
+            • API 호출 감소: 연속 입력 시 최종 값만 전송하여 호출 횟수 대폭 감소
+            <br />
+            • 서버 부하 절감: 불필요한 요청 제거로 서버 리소스 절약
+            <br />• 적용 사례: 검색 자동완성, 실시간 검색, 입력 필터링 등
+          </BenefitText>
+        </BenefitBox>
+      </ConceptCard>
       <DemoTitle>⏱️ Debouncing 비교</DemoTitle>
       <DemoDescription>
         검색창에 "워크플로우"를 입력해보세요! 왼쪽은 매 글자마다 API 호출,
@@ -494,6 +526,80 @@ const RealCaseTitle = styled.h2`
   color: #333;
   text-align: center;
   margin-bottom: 10px;
+`;
+
+// 새로운 스타일 컴포넌트 추가 (OptimisticUIDemo와 동일)
+const ConceptCard = styled.div`
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 30px;
+  color: #1e40af;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+  border: 1px solid #bfdbfe;
+`;
+
+const ConceptTitle = styled.h3`
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  font-weight: 600;
+  color: #1e3a8a;
+`;
+
+const ConceptDescription = styled.p`
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  color: #1e40af;
+`;
+
+const ConceptList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+`;
+
+const ConceptItem = styled.div`
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+`;
+
+const ConceptLabel = styled.div`
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #2563eb;
+`;
+
+const ConceptText = styled.div`
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #475569;
+`;
+
+const BenefitBox = styled.div`
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  border: 2px solid #93c5fd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+`;
+
+const BenefitTitle = styled.h4`
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #1e3a8a;
+`;
+
+const BenefitText = styled.p`
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #475569;
 `;
 
 export default DebounceDemo;

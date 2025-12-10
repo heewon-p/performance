@@ -77,6 +77,41 @@ const PrefetchingDemo = () => {
   return (
     <DemoContainer>
       <DemoTitle>🚀 Prefetching 비교</DemoTitle>
+
+      {/* 프리페칭 개념 설명 섹션 추가 */}
+      <ConceptCard>
+        <ConceptTitle>프리페칭(Prefetching)이란?</ConceptTitle>
+        <ConceptDescription>
+          사용자가 다음에 필요할 것으로 예상되는 데이터를 미리 로드하여 대기
+          시간을 제거하는 기법
+        </ConceptDescription>
+        <ConceptList>
+          <ConceptItem>
+            <ConceptLabel>일반적인 방식</ConceptLabel>
+            <ConceptText>
+              사용자 클릭 {"→"} 데이터 요청 {"→"} 응답 대기 {"→"} 화면 표시
+              (지연 발생)
+            </ConceptText>
+          </ConceptItem>
+          <ConceptItem>
+            <ConceptLabel>프리페칭</ConceptLabel>
+            <ConceptText>
+              사용자 의도 감지(hover 등) {"→"} 미리 데이터 로드 {"→"} 클릭 시
+              즉시 표시
+            </ConceptText>
+          </ConceptItem>
+        </ConceptList>
+        <BenefitBox>
+          <BenefitTitle>개선 효과</BenefitTitle>
+          <BenefitText>
+            • 체감 로딩 시간: 거의 0에 가까운 즉각적인 반응
+            <br />
+            • 사용자 만족도: 매끄럽고 빠른 인터랙션
+            <br />• 적용 시점: 마우스 hover, 뷰포트 진입, 사용자 패턴 분석 등
+          </BenefitText>
+        </BenefitBox>
+      </ConceptCard>
+
       <DemoDescription>
         왼쪽은 클릭하면 500ms 대기, 오른쪽은 hover하고 클릭하면 즉시 표시됩니다!
       </DemoDescription>
@@ -320,6 +355,80 @@ const SummaryText = styled.p`
   font-size: 1.1rem;
   line-height: 1.8;
   opacity: 0.95;
+`;
+
+// 새로운 스타일 컴포넌트 추가
+const ConceptCard = styled.div`
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 30px;
+  color: #1e40af;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+  border: 1px solid #bfdbfe;
+`;
+
+const ConceptTitle = styled.h3`
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  font-weight: 600;
+  color: #1e3a8a;
+`;
+
+const ConceptDescription = styled.p`
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  color: #1e40af;
+`;
+
+const ConceptList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+`;
+
+const ConceptItem = styled.div`
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+`;
+
+const ConceptLabel = styled.div`
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #2563eb;
+`;
+
+const ConceptText = styled.div`
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #475569;
+`;
+
+const BenefitBox = styled.div`
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  border: 2px solid #93c5fd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+`;
+
+const BenefitTitle = styled.h4`
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #1e3a8a;
+`;
+
+const BenefitText = styled.p`
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #475569;
 `;
 
 export default PrefetchingDemo;

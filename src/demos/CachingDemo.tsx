@@ -72,7 +72,45 @@ const CachingDemo = () => {
 
   return (
     <DemoContainer>
-      <DemoTitle>🔄 캐싱 전략 비교</DemoTitle>
+      {/* <DemoDescription>
+        버튼을 여러 번 클릭해보세요! 최적화 전은 매번 800ms가 걸리지만, 최적화
+        후는 두 번째부터 즉시 반환됩니다.
+      </DemoDescription> */}
+
+      {/* 캐싱 개념 설명 섹션 추가 */}
+      <ConceptCard>
+        <ConceptTitle>캐싱(Caching) 전략이란?</ConceptTitle>
+        <ConceptDescription>
+          캐싱은 자주 요청되는 데이터를 임시 저장소에 보관하여, 동일한 요청 시
+          서버 통신 없이 즉시 응답하는 성능 최적화 기법
+        </ConceptDescription>
+        <ConceptList>
+          <ConceptItem>
+            <ConceptLabel>캐싱 미적용</ConceptLabel>
+            <ConceptText>
+              매 요청마다 서버와 통신하여 데이터를 조회 {"→"} 네트워크
+              지연시간만큼 응답 속도 저하 {"→"} 서버 부하 증가
+            </ConceptText>
+          </ConceptItem>
+          <ConceptItem>
+            <ConceptLabel>캐싱 적용</ConceptLabel>
+            <ConceptText>
+              최초 요청 이후 데이터를 로컬 저장 {"→"} 동일 요청은 저장된
+              데이터로 즉시 응답
+            </ConceptText>
+          </ConceptItem>
+        </ConceptList>
+        <BenefitBox>
+          <BenefitTitle>개선 효과</BenefitTitle>
+          <BenefitText>
+            • 사용자 경험 개선: 응답 시간 단축으로 페이지 이탈률 감소
+            <br />
+            • 서버 비용 절감: 중복 요청 제거로 서버 리소스 사용량 감소
+            <br />• 확장성 향상: 동일한 인프라로 더 많은 동시 접속자 처리 가능
+          </BenefitText>
+        </BenefitBox>
+      </ConceptCard>
+      <DemoTitle>캐싱 전략 비교</DemoTitle>
       <DemoDescription>
         버튼을 여러 번 클릭해보세요! 최적화 전은 매번 800ms가 걸리지만, 최적화
         후는 두 번째부터 즉시 반환됩니다.
@@ -80,6 +118,7 @@ const CachingDemo = () => {
 
       <ComparisonGrid>
         {/* 최적화 전 */}
+
         <DemoBox>
           <BoxTitle>❌ 최적화 전</BoxTitle>
           <Description>
@@ -294,16 +333,20 @@ const DataDisplay = styled.div`
 `;
 
 const SummaryCard = styled.div`
-  background: linear-gradient(135deg, #8b9aaf 0%, #6b7c93 100%);
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
   border-radius: 15px;
   padding: 30px;
-  color: white;
+  color: #1e40af;
   margin-top: 30px;
+  border: 1px solid #bfdbfe;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
 `;
 
 const SummaryTitle = styled.h3`
   font-size: 1.5rem;
   margin-bottom: 20px;
+  font-weight: 600;
+  color: #1e3a8a;
 `;
 
 const ImprovementGrid = styled.div`
@@ -314,17 +357,97 @@ const ImprovementGrid = styled.div`
 
 const ImprovementItem = styled.div`
   text-align: center;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 2px solid #93c5fd;
 `;
 
 const ImprovementLabel = styled.div`
   font-size: 0.9rem;
-  opacity: 0.9;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  color: #1e40af;
+  font-weight: 500;
 `;
 
 const ImprovementValue = styled.div`
   font-size: 2rem;
   font-weight: bold;
+  color: #2563eb;
+`;
+
+const ConceptCard = styled.div`
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 30px;
+  color: #1e40af;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+  border: 1px solid #bfdbfe;
+`;
+
+const ConceptTitle = styled.h3`
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  font-weight: 600;
+  color: #1e3a8a;
+`;
+
+const ConceptDescription = styled.p`
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  color: #1e40af;
+`;
+
+const ConceptList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+`;
+
+const ConceptItem = styled.div`
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+`;
+
+const ConceptLabel = styled.div`
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #2563eb;
+`;
+
+const ConceptText = styled.div`
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #475569;
+`;
+
+const BenefitBox = styled.div`
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  border: 2px solid #93c5fd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+`;
+
+const BenefitTitle = styled.h4`
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #1e3a8a;
+`;
+
+const BenefitText = styled.p`
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #475569;
 `;
 
 export default CachingDemo;
